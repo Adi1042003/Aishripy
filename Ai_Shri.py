@@ -10,8 +10,7 @@ import smtplib  # use pip install smtplib
 import pyautogui as auto  # use pip install pyautogui
 import Pdata_elements as PD  # creat ur own file with ur own details
 import time  # use pip install time
-# use pip install winotify and pip install pillow
-from winotify import Notification, audio
+from winotify import Notification, audio  # use pip install winotify and pip install pillow
 from translate import Translator  # use pip install Translate
 from geopy.geocoders import Nominatim  # use pip install gocoder
 from geopy import distance  # use pip install geopy
