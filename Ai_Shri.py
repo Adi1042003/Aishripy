@@ -1,33 +1,34 @@
 # code by Aditya puri
-import random  # use pip install random or Random
-import pyttsx3  # use pip install pyttsx3
-import speech_recognition as sr  # use pip install SpeechRecognition
-import datetime  # use pip install datetime
-import wikipedia  # use pip install wikipedia
-import webbrowser  # use pip install webbrowser
-import os  # use pip install os
-import smtplib  # use pip install smtplib
-import pyautogui as auto  # use pip install pyautogui
-import Pdata_elements as PD  # creat ur own file with ur own details
-import time  # use pip install time
-from winotify import Notification, audio  # use pip install winotify and pip install pillow
-from translate import Translator  # use pip install Translate
-from geopy.geocoders import Nominatim  # use pip install gocoder
-from geopy import distance  # use pip install geopy
+import random                               # use pip install random or Random
+import pyttsx3                              # use pip install pyttsx3
+import speech_recognition as sr             # use pip install SpeechRecognition
+import datetime                             # use pip install datetime
+import wikipedia                            # use pip install wikipedia
+import webbrowser                           # use pip install webbrowser
+import os                                   # use pip install os
+import smtplib                              # use pip install smtplib
+import pyautogui as auto                    # use pip install pyautogui
+import Pdata_elements as PD                 # creat ur own file with ur own details
+import time                                 # use pip install time
+from winotify import Notification, audio    # use pip install winotify and pip install pillow
+from translate import Translator            # use pip install Translate
+from geopy.geocoders import Nominatim       # use pip install gocoder
+from geopy import distance                  # use pip install geopy
+
 iconimg = "C:\\Users\\adity\\OneDrive\\Pictures\\aishrilogo.jpg"
 # enter ur icon img location from your pc and add extra \ as one \ python will consider it as escape character
 
+Bot_Name = "SHRI"
 
 def notify(messagetoD, mtitle='AI SHRI IS LIVE'):
     shri = Notification(app_id='AI Assistant', title=mtitle, msg=messagetoD,
                         duration='short', icon=iconimg)
     shri.set_audio(audio.Mail, loop=False)
     shri.add_actions(label='click me!',
-                     launch='https://adi1042003.github.io/AdityaPuri/sap')
+                     launch='https://adi1042003.github.io/mywebpage/sap.html')
     shri.show()
 
-
-messagetoD = 'shri is now able to help you'
+messagetoD = f'{Bot_Name} is now able to help you'
 notify(messagetoD)
 
 engine = pyttsx3.init('sapi5')
@@ -67,7 +68,6 @@ def takeCommand():
 def volumeup():
     for i in range(0, 5):
         auto.press('volumeup')
-
 
 def volumedown():
     for i in range(0, 5):
@@ -126,7 +126,7 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am shri . Please tell me how may I help you")
+    speak(f"I am {Bot_Name} . Please tell me how may I help you")
 
 
 def takeCommand():
@@ -211,8 +211,8 @@ if __name__ == "__main__":
             speak('Searching Wikipedia...')
             content = takeCommand()
             if 'who built you' in content:
-                speak("I am shri . And i was built by aditya puri")
-                print("I am shri . And i was built by aditya puri")
+                speak(f"I am {Bot_Name} . And i was built by aditya puri")
+                print(f"I am {Bot_Name} . And i was built by aditya puri")
             elif 'who is Aditya Puri' in content:
                 adidetails = 'Aditya Puri (born 10 April 2003) is an E and C enengineering student who is currently studying at the GOGTE INSTITUTE OF TECHNOLOGY, BELGAUM'
                 print(adidetails)
@@ -257,7 +257,7 @@ if __name__ == "__main__":
             except:
                 erroroc()
 
-        elif 'send message' in query:
+        elif 'send a message'  in query:
             try:
                 sendWhatmsg()
             except:
@@ -283,14 +283,14 @@ if __name__ == "__main__":
             speak(f", the time is {strTime}")
 
         elif 'open my website' in query:
-            webbrowser.open('https://adi1042003.github.io/AdityaPuri/sap')
+            webbrowser.open('https://adi1042003.github.io/mywebpage/sap.html')
 
         elif 'send email' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
                 to = PD.send_to
-                sendEmail(PD.send_to, content)
+                sendEmail(to, content)
                 messagetoD = 'email sent sucessfully'
                 speak(messagetoD)
                 notify(messagetoD)
@@ -318,7 +318,7 @@ if __name__ == "__main__":
 
         elif 'what is your name' in query:
             try:
-                speak("my name is shri")
+                speak(f"my name is {Bot_Name}")
             except:
                 erroroc()
             finally:
@@ -329,7 +329,7 @@ if __name__ == "__main__":
                 messagetoD = 'bye ,  u can call me back when u are in need'
 
                 speak(messagetoD)
-                notify(messagetoD, mtitle='AI SHRI IS DOWN')
+                notify(messagetoD, mtitle=f'AI {Bot_Name} IS DOWN')
                 time.sleep(1)
                 os.system('TASKKILL /F /IM pycharm64.exe')
                 os.system('TASKKILL /F /IM Code.exe')
@@ -377,7 +377,7 @@ if __name__ == "__main__":
             except:
                 erroroc()
             finally:
-                speak("by ")
+                speak("byeeee")
 
         elif 'hello' in query:
             try:
@@ -429,7 +429,6 @@ if __name__ == "__main__":
                 speak(f'I have translated and displayed it in {language}\n')
             except:
                 erroroc()
-
         else:
             print("No query matched")
             # speak("No query matched, Please search from the defined query")
