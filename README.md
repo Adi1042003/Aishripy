@@ -12,7 +12,7 @@ pip install pyttsx3 speech_recognition datetime wikipedia webbrowser os smtplib 
 
 You may also need to create your own ```Pdata_elements.py ``` file with your specific details.
 
-##Usage
+## Usage
 - Voice Commands: AI SHRI can understand and execute commands given through voice. Simply say "AI SHRI" followed by your command.
 
 - Web Search: You can ask AI SHRI to search for information on the web using the "Open search" command.
