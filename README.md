@@ -1,7 +1,7 @@
 # AISHRIPY - README
 
 ## Introduction
-AISHRIPY is a voice-controlled AI assistant created by Aditya Puri. This Python-based assistant is designed to perform various tasks and provide information through voice commands. It integrates several libraries and APIs to offer features like sending WhatsApp messages, searching the web, providing weather updates, translating languages, and more.
+AISHRIPY is a voice-controlled assistant created by Aditya Puri. This Python-based assistant is designed to perform various tasks and provide information through voice commands. It integrates several libraries and APIs to offer features like sending WhatsApp messages, searching the web, providing weather updates, translating languages, and more.
 
 ## Installation
 To run AISHRIPY, you need to install the required Python libraries. You can use pip to install these dependencies:
