@@ -57,4 +57,4 @@ Before using AISHRIPY, make sure to configure the following:
 
 # Note: This code and AISHRIPY are provided as-is, and the functionality may be affected by changes in external libraries or services.
 
-Happy commanding! 🗣🤖
+Happy commanding!! 🗣🤖
